@@ -1,0 +1,112 @@
+Last login: Sat Nov 15 08:58:15 on ttys000
+songyanming@songyanmingdeMacBook-Air ~ % git config --global http.version HTTP/1.1
+git config --global http2 false
+error: key does not contain a section: http2
+songyanming@songyanmingdeMacBook-Air ~ % git push
+fatal: not a git repository (or any of the parent directories): .git
+songyanming@songyanmingdeMacBook-Air ~ % cd Desktop
+ls
+1
+Books
+effects of gingival curettage when performed 1 month after root instrumentation.pdf
+image-host
+Int Endodontic J - 2011 - Mohammadi - Properties and applications of calcium hydroxide in endodontics and dental.pdf
+mkdir imgs
+OK 美学区修复间隙管理.pdf
+Periodontal tissue changes after crown lengthening surgery- A systematic review and meta-analysis.pdf
+zhanjie
+德和齿科
+截屏2025-04-13 12.16.18.png
+氢氧化钙糊剂与根管内感染控制_李婧.pdf
+须弥神曲
+songyanming@songyanmingdeMacBook-Air Desktop % cd zhanjie
+songyanming@songyanmingdeMacBook-Air zhanjie % git config --global http.http2 false
+songyanming@songyanmingdeMacBook-Air zhanjie % git push
+Everything up-to-date
+songyanming@songyanmingdeMacBook-Air zhanjie % git add .
+songyanming@songyanmingdeMacBook-Air zhanjie % git commit -m"gx"
+[main c361bc3] gx
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+ create mode 100644 .DS_Store
+songyanming@songyanmingdeMacBook-Air zhanjie % git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.15 KiB | 1.15 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/39335494s-sys/zhanjie.git
+   57504f9..c361bc3  main -> main
+songyanming@songyanmingdeMacBook-Air zhanjie % cd 1
+cd: no such file or directory: 1
+songyanming@songyanmingdeMacBook-Air zhanjie % cd ~/desktop/1
+songyanming@songyanmingdeMacBook-Air 1 % git add .
+songyanming@songyanmingdeMacBook-Air 1 % git commit -m"gx"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+songyanming@songyanmingdeMacBook-Air 1 % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/39335494s-sys/1.git
+   6d40edc..9ea3600  main -> main
+songyanming@songyanmingdeMacBook-Air 1 % cd ~/desktop/zhanjie
+songyanming@songyanmingdeMacBook-Air zhanjie % git add .
+songyanming@songyanmingdeMacBook-Air zhanjie % git push
+Everything up-to-date
+songyanming@songyanmingdeMacBook-Air zhanjie % git add .
+songyanming@songyanmingdeMacBook-Air zhanjie % git commit -m"gx"
+[main 52dcd2a] gx
+ 1 file changed, 59 insertions(+), 4 deletions(-)
+songyanming@songyanmingdeMacBook-Air zhanjie % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.63 KiB | 3.63 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/39335494s-sys/zhanjie.git
+   c361bc3..52dcd2a  main -> main
+songyanming@songyanmingdeMacBook-Air zhanjie % cd ~/desktop/image-host
+songyanming@songyanmingdeMacBook-Air image-host % ~/Desktop/image-host/auto_image_push.sh
+zsh: no such file or directory: /Users/songyanming/Desktop/image-host/auto_image_push.sh
+songyanming@songyanmingdeMacBook-Air image-host % cd ~/Desktop/image-host
+ls -l
+total 6048
+-rw-r--r--  1 songyanming  staff       12 11月 14 17:02 README.md
+-rw-r--r--@ 1 songyanming  staff  3091119 11月 14 17:15 截屏2025-11-14 17.15.12.png
+songyanming@songyanmingdeMacBook-Air image-host % cd ~/Desktop/image-host
+nano auto_image_push.sh
+
+  UW PICO 5.09                File: auto_image_push.sh                Modified  
+
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+# 查找 images 文件夹中所有变动
+changes=$(git status --porcelain images)
+
+if [ -n "$changes" ]; then
+    git add images
+    commit_msg="自动同步图片：$(date '+%Y-%m-%d %H:%M:%S')"
+    git commit -m "$commit_msg"
+    git push
+    echo "已自动上传图片！"
+else
+    echo "没有发现新的图片。"
+fi
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
